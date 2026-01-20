@@ -1,24 +1,23 @@
 ---
+import Header from "../components/Header.astro";
 const pageTitle = "My Astro learning blog";
 ---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} >
+    <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
   <body>
-    <nav>
-        <a href="/">Index</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
-    </nav> 
+    <Header />
     <h1>{pageTitle}</h1>
-	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Neque fugiat, maiores laboriosam debitis perspiciatis rem maxime illo, reiciendis totam ea at et quae aspernatur. 
-        Totam voluptate animi facere iste doloribus.
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque fugiat,
+      maiores laboriosam debitis perspiciatis rem maxime illo, reiciendis totam
+      ea at et quae aspernatur. Totam voluptate animi facere iste doloribus.
     </p>
 
     <ul>
@@ -26,6 +25,5 @@ const pageTitle = "My Astro learning blog";
       <li><a href="/posts/post-2/">Post 2</a></li>
       <li><a href="/posts/post-3/">Post 3</a></li>
     </ul>
-
   </body>
 </html>

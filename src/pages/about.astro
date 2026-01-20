@@ -1,4 +1,8 @@
 ---
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro';
+import '../styles/style.css';
+
 const pageTitle = "About Me";
 
 const person = {
@@ -8,19 +12,7 @@ const person = {
   hobbies: ["Playing the guitar", "Coding", "Playing genshin impact"],
 };
 
-const skills = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "Astro",
-  "React",
-  "Tailwind.css",
-  "Node.js",
-  "Git",
-  "GitHub",
-  "Python",
-  "TypeScript",
-];
+const skills = ["HTML","CSS","JavaScript","Astro","React","Tailwind.css","Node.js","Git","GitHub","Python","TypeScript"];
 
 const happy = false;
 const finished = false;
@@ -48,14 +40,12 @@ const goal = 3;
       .s {
         color: #9474f7;
       }
+
+
     </style>
   </head>
   <body>
-    <nav>
-      <a href="/">Index</a>
-      <a href="/about/">About</a>
-      <a href="/blog/">Blog</a>
-    </nav>
+    <Header />
     <h1>{pageTitle}</h1>
 
     <ul>
@@ -79,4 +69,9 @@ const goal = 3;
     }
     {goal % 3 == 0 && <p>I have a goal</p>}
   </body>
+  <Footer/>
+
+  <script>
+    import '../scripts/menu.js';
+  </script>
 </html>
