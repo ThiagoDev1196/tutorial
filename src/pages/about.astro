@@ -1,19 +1,82 @@
+---
+const pageTitle = "About Me";
+
+const person = {
+  firstName: "Thiago",
+  country: "Argentina",
+  occupation: "Web Developer",
+  hobbies: ["Playing the guitar", "Coding", "Playing genshin impact"],
+};
+
+const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "Astro",
+  "React",
+  "Tailwind.css",
+  "Node.js",
+  "Git",
+  "GitHub",
+  "Python",
+  "TypeScript",
+];
+
+const happy = false;
+const finished = false;
+const goal = 3;
+---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} >
-    <title>Astro</title>
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+
+    <style>
+      h1 {
+        color: #be27f5;
+      }
+
+      body {
+        background-color: #330047;
+        color: #fae3ff;
+      }
+
+      .s {
+        color: #9474f7;
+      }
+    </style>
   </head>
   <body>
     <nav>
-        <a href="/index/">Index</a>
-        <a href="/about/">About</a>
-        <a href="/blog/">Blog</a>
-    </nav> 
-    <h1>About me</h1>
-	<p>This is the about me section form astro's tutorial</p>
-    <p>I'm learning this frameworok</p>
+      <a href="/">Index</a>
+      <a href="/about/">About</a>
+      <a href="/blog/">Blog</a>
+    </nav>
+    <h1>{pageTitle}</h1>
+
+    <ul>
+      <li>Hi, I'm {person.firstName}</li>
+      <li>I'm from {person.country}</li>
+      <li>I work as a {person.occupation}</li>
+      <li>My hobbies are: {person.hobbies.join(", ").toLowerCase()}</li>
+    </ul>
+    <p>My skills are:</p>
+    <ul>
+      {skills.map((s) => <li class="s">{s}</li>)}
+    </ul>
+
+    {!happy && <p>I'm not happy</p>}
+    {
+      finished ? (
+        <p>I finished the tutorial</p>
+      ) : (
+        <p>I haven't finished the tutorial yet</p>
+      )
+    }
+    {goal % 3 == 0 && <p>I have a goal</p>}
   </body>
 </html>
